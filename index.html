@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3f6f1" />
+    <title>Daymark | To-do list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Daymark home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>daymark</span>
+        </a>
+        <span class="date-label" id="today-label"></span>
+      </header>
+
+      <section class="workspace" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow"><span class="eyebrow-line"></span> YOUR DAILY SPACE</p>
+          <h1 id="page-title">Make room<br />for <span>what matters.</span></h1>
+          <p class="intro-copy">One thing at a time. You've got this.</p>
+        </div>
+
+        <section class="todo-panel" aria-label="Your to-do list">
+          <form class="task-form" id="task-form">
+            <label class="sr-only" for="task-input">Add a task</label>
+            <input id="task-input" name="task" type="text" maxlength="120" placeholder="What needs doing?" autocomplete="off" required />
+            <button class="add-button" type="submit"><span aria-hidden="true">+</span><span class="button-label">Add task</span></button>
+          </form>
+
+          <div class="list-toolbar">
+            <p class="task-count" id="task-count" aria-live="polite">0 tasks left</p>
+            <div class="filters" role="group" aria-label="Filter tasks">
+              <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter-button" type="button" data-filter="active" aria-pressed="false">Active</button>
+              <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+            </div>
+          </div>
+
+          <ul class="task-list" id="task-list" aria-label="Tasks"></ul>
+          <div class="empty-state" id="empty-state">
+            <span class="empty-icon" aria-hidden="true">✳</span>
+            <p class="empty-title">A clear start.</p>
+            <p class="empty-copy">Add a task above and make today yours.</p>
+          </div>
+          <footer class="list-footer">
+            <span class="save-note"><span class="save-dot" aria-hidden="true"></span> Saved on this device</span>
+            <button class="clear-button" id="clear-completed" type="button" hidden>Clear completed</button>
+          </footer>
+        </section>
+
+        <p class="page-note"><span aria-hidden="true">↳</span> Small steps still move you forward.</p>
+      </section>
+
+      <div class="side-stamp" aria-hidden="true">FOCUS<br />ON TODAY</div>
+      <div class="bottom-orbit" aria-hidden="true"><span></span></div>
+    </main>
+  </body>
+</html>
